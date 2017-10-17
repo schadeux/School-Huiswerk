@@ -1,0 +1,123 @@
+package bsamonitor;
+
+/**
+ *
+ * Studentnummer = 500781311
+ * @author Ikki
+ */
+import java.util.Scanner;
+
+public class BsaMonitor {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        //vakken/project
+        String [] vakNamen = {"Fasten Your Seatbelt", "Databases", "Programming", "Personal Skills", "Project Skills", "Infrastructure", "Network Engineering"};
+        
+        //studiepunten
+        int [] vakPunten = {12,3,3,2,2,3,3};
+        
+        //user input
+        System.out.println("Voer behaalde cijfers in: ");
+        System.out.println("Faster Your Seatbelts: ");
+        double fysCijfer = input.nextDouble();
+        System.out.println("Databases: ");
+        double dataCijfer = input.nextDouble();
+        System.out.println("Programming: ");
+        double programCijfer = input.nextDouble();
+        System.out.println("Personal Skills: ");
+        double personalCijfer = input.nextDouble();
+        System.out.println("Project Skills: ");
+        double projectCijfer = input.nextDouble();
+        System.out.println("Infrastructure: ");
+        double infraCijfer = input.nextDouble();
+        System.out.println("Network Engineer: ");
+        double engineerCijfer = input.nextDouble();
+        
+        double [] vakCijfer = {fysCijfer, dataCijfer, programCijfer, personalCijfer, projectCijfer, infraCijfer, engineerCijfer};
+
+        //status
+        int totaalPunten = 0;
+        int gehaaldePunten = 0;
+
+        //FYS
+        totaalPunten += vakPunten [0];
+        if (fysCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[0];
+        } else {
+            vakPunten[0] = 0;
+        }
+
+        //databases
+        totaalPunten += vakPunten[1];
+        if (dataCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[1];
+        } else {
+            vakPunten[1] = 0;
+        }
+
+        //programming
+        totaalPunten += vakPunten[2];
+        if (programCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[2];
+        } else {
+            vakPunten[2] = 0;
+        }
+
+        //personal skills
+        totaalPunten += vakPunten[3];
+        if (personalCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[3];
+        } else {
+            vakPunten[3] = 0;
+        }
+
+        //project skills
+        totaalPunten += vakPunten[4];
+        if (projectCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[4];
+        } else {
+            vakPunten[4] = 0;
+        }
+
+        //infrastructure
+        totaalPunten += vakPunten[5];
+        if (infraCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[5];
+        } else {
+            vakPunten[5] = 0;
+        }
+
+        //network engineering
+        totaalPunten += vakPunten[6];
+        if (engineerCijfer >= 5.5) {
+            gehaaldePunten += vakPunten[6];
+        } else {
+            vakPunten[6] = 0;
+        }
+
+        //result / output
+        System.out.println("Vak/Project: " + vakNamen[0] + "\tcijfer: " + fysCijfer + "\tBehaalde punt:" + vakPunten[0]);
+        System.out.println("Vak/Project: " + vakNamen[1] + "\t \t \tcijfer: " + dataCijfer + "\tBehaalde punt:" + vakPunten[1]);
+        System.out.println("Vak/Project: " + vakNamen[2] + "\t \tcijfer: " + programCijfer + "\tBehaalde punt:" + vakPunten[2]);
+        System.out.println("Vak/Project: " + vakNamen[3] + "\t \tcijfer: " + personalCijfer + "\tBehaalde punt:" + vakPunten[3]);
+        System.out.println("Vak/Project: " + vakNamen[4] + "\t \tcijfer: " + projectCijfer + "\tBehaalde punt:" + vakPunten[4]);
+        System.out.println("Vak/Project: " + vakNamen[5] + "\t \tcijfer: " + infraCijfer + "\tBehaalde punt:" + vakPunten[5]);
+        System.out.println("Vak/Project: " + vakNamen[6] + "\tcijfer: " + engineerCijfer + "\tBehaalde punt:" + vakPunten[6]);
+        System.out.println(" ");
+        System.out.println("Totaal studiepunten: " + gehaaldePunten + "/" + totaalPunten);
+
+        //status check
+        if (gehaaldePunten < 23) {
+            System.out.println(" ");
+            System.out.println("PAS OP: Je ligt op schema voor een negatief BSA!");
+        } else {
+            System.out.println(" ");
+            System.out.println("Je ligt op schema!");
+        }
+
+    }
+}
